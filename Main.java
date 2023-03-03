@@ -52,20 +52,22 @@ public class Main {
             err=system.err
 
         */
-        HashSet<Integer> set = new HashSet<>();
-        set.add(1);
-        set.add(2);
-        set.add(3);
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("one", 1);
+        map.put("two", 2);
+        map.put("three", 3);
+
+
 
 
 
 
         /*
         output to the output file
-        [1, 2, 3]
+        {one=1, two=2, three=3}
 
         */
-        pw.println(set.toString());
+        pw.println(map.toString());
 
 
         // logic and operations here
