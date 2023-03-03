@@ -52,7 +52,7 @@ public class Main {
             err=system.err
 
         */
-        ArrayList<Integer> list = new ArrayList<>();
+        LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
         list.add(3);
