@@ -52,10 +52,12 @@ public class Main {
             err=system.err
 
         */
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+
+
 
 
         /*
@@ -63,7 +65,7 @@ public class Main {
         [1, 2, 3]
 
         */
-        pw.println(list.toString());
+        pw.println(set.toString());
 
 
         // logic and operations here
