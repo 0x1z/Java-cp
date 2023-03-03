@@ -47,14 +47,25 @@ public class Main {
             pw = new PrintWriter(new FileWriter("output.txt"));
             err = new PrintWriter(new FileWriter("Error.txt"));
         }
+        /*
+            pw=system.out
+            err=system.err
 
+        */
+        int[] arr = {1, 2, 3};
 
+        /*
+        output to the output file
+        [1, 2, 3]
+
+        */
+        pw.println(Arrays.toString(arr));
 
         // logic and operations here
 
-        int result = 42; // placeholder for the result of the program's computation
-        pw.println(result); // output to file or standard output
-        err.println(result);
+        // int result = 42; // placeholder for the result of the program's computation
+        // pw.println(result); // output to file or standard output
+        // err.println(result);
         pw.close();
         err.close();
     }
