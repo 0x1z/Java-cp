@@ -60,27 +60,22 @@ public class Main {
     }
 
     static void closeEnv() {
-
         pw.close();
         err.close();
-
     }
 
     static void solve() {
         int n = sc.nextInt();
-
-        // err.println("n " + n);
-        int arr[] = new int[n];
+        // int k = sc.nextInt();
+        // err.println(n);
+        // err.println(k);
+        List<Integer>ali = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
-            arr[i] = x;
+            ali.add(x);
         }
-        List<Integer> arlist = new ArrayList<>();
-        for (int i : arr) {
-            arlist.add(i);
-        }
-        Collections.sort(arlist);
-        err.println(arlist.toString());
+        Collections.sort(ali);
+        err.println(ali.toString());
     }
 
     public static void main(String[] args) throws IOException {
