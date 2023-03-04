@@ -60,10 +60,10 @@ public class Main {
     }
 
     static void closeEnv() {
-        if (!ONLINE_JUDGE) {
-            pw.close();
-            err.close();
-        }
+
+        pw.close();
+        err.close();
+
     }
 
     static void solve() {
