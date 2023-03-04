@@ -4,6 +4,10 @@ import java.io.*;
 public class Main {
     static final boolean ONLINE_JUDGE = System.getProperty("ONLINE_JUDGE") != null;
 
+    static FastScanner sc;
+    static PrintWriter pw;
+    static PrintWriter err;
+
     static class FastScanner {
         BufferedReader br;
         StringTokenizer st;
@@ -36,49 +40,59 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        FastScanner sc = new FastScanner(System.in);
-        PrintWriter pw = new PrintWriter(System.out);
-        PrintWriter err = new PrintWriter(System.err);
+
+    static void setEnv() {
+        sc = new FastScanner(System.in);
+        pw = new PrintWriter(System.out);
+        err = new PrintWriter(System.err);
 
         if (!ONLINE_JUDGE) { // if running locally, read input from file
             File input = new File("input.txt");
-            sc = new FastScanner(new FileInputStream(input));
-            pw = new PrintWriter(new FileWriter("output.txt"));
-            err = new PrintWriter(new FileWriter("Error.txt"));
+            try {
+                sc = new FastScanner(new FileInputStream(input));
+                pw = new PrintWriter(new FileWriter("output.txt"));
+                err = new PrintWriter(new FileWriter("Error.txt"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        /*
-            pw=system.out
-            err=system.err
 
-        */
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put("one", 1);
-        map.put("two", 2);
-        map.put("three", 3);
+    }
 
+    static void closeEnv() {
+        if (!ONLINE_JUDGE) {
+            pw.close();
+            err.close();
+        }
+    }
 
+    static void solve() {
+        int n = sc.nextInt();
 
+        // err.println("n " + n);
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            arr[i] = x;
+        }
+        List<Integer> arlist = new ArrayList<>();
+        for (int i : arr) {
+            arlist.add(i);
+        }
+        Collections.sort(arlist);
+        err.println(arlist.toString());
+    }
 
-
-
-        /*
-        output to the output file
-        {one=1, two=2, three=3}
-
-        */
-        pw.println(map.toString());
-
+    public static void main(String[] args) throws IOException {
+        setEnv();
 
         // logic and operations here
-
-        // int result = 42; // placeholder for the result of the program's computation
+        int t = sc.nextInt(); // placeholder for the result of the program's computation
         // pw.println(result); // output to file or standard output
         // err.println(result);
-        pw.close();
-        err.close();
+        while (t-- > 0) {
+            solve();
+        }
+        closeEnv();
     }
 }
-
-
-
